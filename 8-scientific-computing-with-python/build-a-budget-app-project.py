@@ -8,7 +8,6 @@ class Category:
 
     def __str__(self):
         str_category = self.name.center(30, '*')
-        # l_name = len(self.name
         for entry in self.ledger:
             str_amount = str(float(entry['amount']))
 
@@ -68,7 +67,7 @@ def create_spend_chart(categories):
     for y in range(100, -10, -10):
         str_chart += '\n'
         str_chart += str(y).rjust(3) + '| '
-        str_chart += ''.join('o  ' if (expense*10//total_expense)*10 >= y else '   ' for expense in expenses )
+        str_chart += ''.join('o  ' if (expense*10//total_expense)*10 >= y else '   ' for expense in expenses)
 
     str_chart += '\n    -'
     str_chart += ''.join('---' for category in categories)
